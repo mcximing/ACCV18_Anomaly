@@ -5,7 +5,7 @@ Citation:
 ```
 @inproceedings{Cong2018Anomaly,
   title={Detecting Anomalous Trajectories via Recurrent Neural Networks},
-  author={Ma, Cong and Miao, Zhenjiang and Li, Min and Song Shaoyue, and Yang Ming-Hsuan},
+  author={Cong Ma and Zhenjiang Miao and Min Li and Shaoyue Song and Ming-Hsuan Yang},
   booktitle={Asian Conference on Computer Vision},
   year={2018},
 }
