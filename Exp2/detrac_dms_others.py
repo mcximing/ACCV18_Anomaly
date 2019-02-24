@@ -40,16 +40,13 @@ def resample(trajs, t_len=12):
 
 if __name__ == "__main__":
     
-    namelist = []
-    with open('D:/Data/DETRAC/train-names.txt', 'r') as fp:
-        for line in fp:
-            namelist.append(line.strip())
-    
     dataset_path = 'D:/Data/DETRAC/train-traj-data/'
     with open(dataset_path+'data.pkl', 'rb') as fp:
         data = pickle.load(fp)
     with open(dataset_path+'label.pkl', 'rb') as fp:
         label = pickle.load(fp)
+    
+    namelist = sorted(list(labels.keys()))
     
     # compute
     dms_euc = []

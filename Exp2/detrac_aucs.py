@@ -14,13 +14,10 @@ from sklearn.metrics import roc_curve, auc
 
 if __name__ == "__main__":
     
-    namelist = []
-    with open('D:/Data/DETRAC/train-names.txt', 'r') as fp:
-        for line in fp:
-            namelist.append(line.strip())
-    
     with open('D:/Data/DETRAC/train-traj-data/label.pkl', 'rb') as fp:
         labels = pickle.load(fp)
+        
+    namelist = sorted(list(labels.keys()))
     
     # 31 sets with positive samples
     idx = []
@@ -80,10 +77,6 @@ if __name__ == "__main__":
         scores_hau.append(np.sort(dm, axis=0)[1])
     for dm in dms_hmm:
         scores_hmm.append(np.sort(dm, axis=0)[1])
-    for dm in dms_aes:
-        scores_aes.append(np.sort(dm, axis=0)[1])
-    for dm in dms_aes2:
-        scores_aes2.append(np.sort(dm, axis=0)[1])
     for dm in dms_aet:
         scores_aet.append(np.sort(dm, axis=0)[1])
     

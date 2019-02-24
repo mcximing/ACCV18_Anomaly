@@ -39,13 +39,18 @@ def resample(trajs, t_len=12):
 
 if __name__ == "__main__":
     
+    #namelist = []
+    #with open('/home/cong/Data/Anomaly/DETRAC/train-names.txt', 'r') as fp:
+    #    for line in fp:
+    #        namelist.append(line.strip())
+    
     dataset_path = '/home/cong/Data/Anomaly/DETRAC/'
     with open(dataset_path+'data.pkl', 'rb') as fp:
         data = pickle.load(fp)
     with open(dataset_path+'label.pkl', 'rb') as fp:
         label = pickle.load(fp)
     
-    namelist = list(label.keys())
+    namelist = sorted(list(labels.keys()))
     
     # compute
     dms = []
