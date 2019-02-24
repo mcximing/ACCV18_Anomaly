@@ -55,7 +55,7 @@ if __name__ == "__main__":
     with open(dataset_path+'label.pkl', 'rb') as fp:
         label = pickle.load(fp)
         
-    namelist = sorted(list(labels.keys()))
+    namelist = sorted(list(label.keys()))
     
     # compute
     dms_eucl = []

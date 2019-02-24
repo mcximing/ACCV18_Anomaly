@@ -15,15 +15,15 @@ from sklearn.metrics import roc_curve, auc
 if __name__ == "__main__":
     
     with open('D:/Data/DETRAC/train-traj-data/label.pkl', 'rb') as fp:
-        labels = pickle.load(fp)
+        label = pickle.load(fp)
         
-    namelist = sorted(list(labels.keys()))
+    namelist = sorted(list(label.keys()))
     
     # 31 sets with positive samples
     idx = []
     for i in range(60):
         name = namelist[i]
-        if (labels[name]==1).sum() > 0:
+        if (label[name]==1).sum() > 0:
             idx.append(i)
     print(len(idx))
     
@@ -86,7 +86,7 @@ if __name__ == "__main__":
         name = namelist[idx[s]]
         scores = [scores_eucl[s], scores_dtw[s], scores_sspd[s], scores_lcss[s], scores_edr[s], \
                   scores_erp[s], scores_fre[s], scores_hau[s], scores_hmm[s], scores_aet[s]]
-        gt = labels[name]
+        gt = label[name]
         mask = gt<2
         gt = gt[mask]
         s_num = len(scores)
